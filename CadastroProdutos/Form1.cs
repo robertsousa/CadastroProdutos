@@ -1,8 +1,10 @@
+using CadastroProdutos.Forms;
+
 namespace CadastroProdutos
 {
-    public partial class Form1 : Form
+    public partial class frmPrincipal : Form
     {
-        public Form1()
+        public frmPrincipal()
         {
             InitializeComponent();
         }
@@ -10,6 +12,19 @@ namespace CadastroProdutos
         private void menuSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var forms = this.MdiChildren.Where(f => f.Name.Contains("FormCadastroProdutos"));
+            FormCadastroProdutos frm = (FormCadastroProdutos)forms.FirstOrDefault();
+
+            if(frm == null)
+                frm = new FormCadastroProdutos();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+
         }
     }
 }
