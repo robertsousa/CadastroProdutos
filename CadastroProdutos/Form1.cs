@@ -6,5 +6,10 @@ namespace CadastroProdutos
         {
             InitializeComponent();
         }
+
+        private void menuSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
