@@ -10,22 +10,16 @@ using System.Windows.Forms;
 
 namespace CadastroProdutos.Forms
 {
-    public partial class FormCadastroProdutos : Form
+    public partial class FormAddProduct : Form
     {
-        public FormCadastroProdutos()
+        public FormAddProduct()
         {
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void btnAddProduct_Click(object sender, EventArgs e)
-        {
-            FormAddProduct formAddProduct = new FormAddProduct();   
-            formAddProduct.ShowDialog();
         }
     }
 }

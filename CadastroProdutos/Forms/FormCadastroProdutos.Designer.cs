@@ -39,15 +39,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodeProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.IdProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodeProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantityProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
@@ -149,11 +149,11 @@
             this.dgvProduct.AllowUserToOrderColumns = true;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
+            this.IdProduct,
             this.CodeProduct,
-            this.Name,
-            this.Price,
-            this.Quantity});
+            this.NameProduct,
+            this.PriceProduct,
+            this.QuantityProduct});
             this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProduct.Location = new System.Drawing.Point(0, 0);
             this.dgvProduct.Name = "dgvProduct";
@@ -161,45 +161,6 @@
             this.dgvProduct.RowTemplate.Height = 25;
             this.dgvProduct.Size = new System.Drawing.Size(560, 284);
             this.dgvProduct.TabIndex = 0;
-            // 
-            // Id
-            // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // CodeProduct
-            // 
-            this.CodeProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.CodeProduct.HeaderText = "Code";
-            this.CodeProduct.Name = "CodeProduct";
-            this.CodeProduct.ReadOnly = true;
-            this.CodeProduct.Width = 60;
-            // 
-            // Name
-            // 
-            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Name.HeaderText = "Name Product";
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Width = 58;
-            // 
-            // Quantity
-            // 
-            this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            this.Quantity.Width = 78;
             // 
             // btnAddProduct
             // 
@@ -209,6 +170,7 @@
             this.btnAddProduct.TabIndex = 5;
             this.btnAddProduct.Text = "ADD ";
             this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // btnEdit
             // 
@@ -237,6 +199,46 @@
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // IdProduct
+            // 
+            this.IdProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.IdProduct.HeaderText = "Id";
+            this.IdProduct.Name = "IdProduct";
+            this.IdProduct.ReadOnly = true;
+            this.IdProduct.Visible = false;
+            this.IdProduct.Width = 42;
+            // 
+            // CodeProduct
+            // 
+            this.CodeProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.CodeProduct.HeaderText = "Code";
+            this.CodeProduct.Name = "CodeProduct";
+            this.CodeProduct.ReadOnly = true;
+            this.CodeProduct.Width = 60;
+            // 
+            // NameProduct
+            // 
+            this.NameProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NameProduct.HeaderText = "Name Product";
+            this.NameProduct.Name = "NameProduct";
+            this.NameProduct.ReadOnly = true;
+            // 
+            // PriceProduct
+            // 
+            this.PriceProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PriceProduct.HeaderText = "Price";
+            this.PriceProduct.Name = "PriceProduct";
+            this.PriceProduct.ReadOnly = true;
+            this.PriceProduct.Width = 58;
+            // 
+            // QuantityProduct
+            // 
+            this.QuantityProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.QuantityProduct.HeaderText = "Quantity";
+            this.QuantityProduct.Name = "QuantityProduct";
+            this.QuantityProduct.ReadOnly = true;
+            this.QuantityProduct.Width = 78;
             // 
             // FormCadastroProdutos
             // 
@@ -279,10 +281,10 @@
         private Button btnEdit;
         private Button btnRemove;
         private Button btnClose;
-        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn IdProduct;
         private DataGridViewTextBoxColumn CodeProduct;
-        private DataGridViewTextBoxColumn Name;
-        private DataGridViewTextBoxColumn Price;
-        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn NameProduct;
+        private DataGridViewTextBoxColumn PriceProduct;
+        private DataGridViewTextBoxColumn QuantityProduct;
     }
 }
